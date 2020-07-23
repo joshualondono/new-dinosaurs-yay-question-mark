@@ -17,19 +17,19 @@ const makeSingular = function(obj) {
   } else {
     const sliceEnd = obj.species.lastIndexOf('us');
     obj.species = obj.species.slice(0, sliceEnd)
-  } return obj
+  } return makeDino(obj.species, obj.period, obj.carnivore, obj.extinct)
 }
 
 const truncateSpecies = function(obj) {
-  if(obj.species.length > 10){
+  if(obj.species.length >= 10){
     obj.species = obj.species.slice(0, 7) + '...'
-  } return obj
+  } return makeDino(obj.species, obj.period, obj.carnivore, obj.extinct)
 }
 
 const makeExtinct = function(obj) {
    if(obj.extinct === false){
      obj.extinct = true
-   } return obj
+   } return makeDino(obj.species, obj.period, obj.carnivore, obj.extinct)
 }
 
 module.exports = {
