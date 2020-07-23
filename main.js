@@ -26,7 +26,11 @@ const makeSingular = function(obj) {
   }
 }
 
-const truncateSpecies = function() {
+const truncateSpecies = function(obj) {
+  if(obj.species.length > 10){
+    obj.species = obj.species.slice(0, 7) + '...'
+    return obj
+  } return obj
 }
 
 const makeExtinct = function() {
