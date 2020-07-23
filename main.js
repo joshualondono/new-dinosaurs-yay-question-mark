@@ -1,7 +1,29 @@
-const makeDino = function() {
-}
+const makeDino = function(name, period, diet, extinct) {
+    const obj = {
+      species: name,
+      period: period,
+      carnivore: diet,
+      extinct: extinct
+    }
 
-const makeSingular = function() {
+    if(obj.extinct === undefined){
+      obj.extinct = false
+      return obj
+
+    } else{
+      obj.extinct === extinct
+    }
+    return obj
+  }
+
+const makeSingular = function(obj) {
+  if(obj.species.lastIndexOf('us') === -1){
+    return obj
+  } else {
+    let indexStart = obj.species.lastIndexOf('us');
+    obj.species = obj.species.slice(0, indexStart)
+    return obj
+  }
 }
 
 const truncateSpecies = function() {
