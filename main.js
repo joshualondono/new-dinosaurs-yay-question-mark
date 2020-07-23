@@ -33,7 +33,11 @@ const truncateSpecies = function(obj) {
   } return obj
 }
 
-const makeExtinct = function() {
+const makeExtinct = function(obj) {
+   if(obj.extinct === false){
+     obj.extinct = true
+     return obj
+   } return obj
 
 }
 
